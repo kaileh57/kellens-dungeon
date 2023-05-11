@@ -260,7 +260,7 @@ script = ExtResource("2_eabtm")
 
 [node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dcdx0")
-animation = &"move"
+animation = &"idle"
 metadata/_edit_lock_ = true
 
 [node name="SpriteAnimator" type="AnimationPlayer" parent="."]

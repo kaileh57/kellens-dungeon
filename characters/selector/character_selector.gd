@@ -50,8 +50,7 @@ func enable_red():
 func enable_blue():
 	$MenuBackground/Page1/HBoxContainer/Blue.disabled = false
 	$MenuBackground/Page1/HBoxContainer/Blue/Label.text = "Blue"
-	$MenuBackground/Page1/HBoxContainer/Blue/Label2.text = """Blue can take a sip of his potion and become temporarily immortal.
-	
+	$MenuBackground/Page1/HBoxContainer/Blue/Label2.text = """Blue can go fast and attack fast, he can't take very many hits however.
 	
 	
 	Easy"""
@@ -67,4 +66,9 @@ func switch_scenes():
 func _on_red_pressed():
 	character_name = "red"
 	character_path = "res://characters/red/red.tscn"
+	switch_scenes()
+
+func _on_blue_pressed():
+	character_name = "blue"
+	character_path = "res://characters/blue/blue.tscn"
 	switch_scenes()
