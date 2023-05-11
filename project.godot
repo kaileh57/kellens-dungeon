@@ -13,7 +13,6 @@ config_version=5
 config/name="2023 Roguelike Dev"
 run/main_scene="res://title_and_credits/title_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-boot_splash/image="res://fonts_and_extras/downforce_final_black.png"
 config/icon="res://icon.svg"
 
 [autoload]

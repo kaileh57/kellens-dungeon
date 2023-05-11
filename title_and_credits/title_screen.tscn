@@ -257,4 +257,3 @@ text = "Background is a work in progress"
 [connection signal="button_up" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_quit_button_up"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="toggled" from="CanvasLayer/Testing" to="CanvasLayer/Testing" method="_on_toggled"]
-[connection signal="animation_finished" from="CanvasLayer/Fade/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
