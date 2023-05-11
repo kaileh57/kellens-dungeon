@@ -1,0 +1,12 @@
+project wide standards
+
+node names: TextText
+scene name: text_text
+folders: text_text
+txt files: Text_text
+script: text_text
+function: text_text
+var: text_text
+autoloads: TextText
+class: TextText
+animation: texttext

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7icltebvd1mg"]
+
+[ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hurtbox.gd" id="1_6ytnn"]
+[ext_resource type="Script" path="res://characters/base/character_base.gd" id="1_j75hk"]
+[ext_resource type="Script" path="res://characters/fsm/fsm.gd" id="2_3aomk"]
+
+[node name="CharacterBase" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_j75hk")
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("2_3aomk")
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="SpriteAnimator" type="AnimationPlayer" parent="."]
+
+[node name="PhysicsShape" type="CollisionShape2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("1_6ytnn")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvspi1sqdfghy"]
+
+[ext_resource type="Script" path="res://autoloads/music_bus/music_bus.gd" id="1_rmlw2"]
+
+[node name="MusicBus" type="Node"]
+script = ExtResource("1_rmlw2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
