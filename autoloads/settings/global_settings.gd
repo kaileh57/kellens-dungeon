@@ -10,6 +10,9 @@ var mode: int = 0 #used to set build mode, 0 for dev, 1 for experimental, 2 for 
 @export var game_path := ""#res://testing_and_debugging/testing.tscn"
 @export var test_path := "res://testing_and_debugging/testing.tscn"
 
+@onready var players: Node2D = get_tree().current_scene.find_node("Players")
+
+
 var testing = false
 
 func boot():#util function to print selected settings
@@ -19,9 +22,14 @@ func boot():#util function to print selected settings
 	debug.debug_print("test path: " + str(test_path))
 	
 
+func _process(delta):
+	player_list.clear()
+	for i in players.get_children():
+		player_list.append(i)
 
 
 #game vars
 var difficulty: String
 var character_name: String
 var character_path: String
+var player_list := []
