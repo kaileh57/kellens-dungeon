@@ -203,6 +203,51 @@ text = "Unlock this character somewhere in the dungeon
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Green" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("8_xapxh")
+texture_pressed = ExtResource("9_27g3m")
+texture_hover = ExtResource("10_bk2r5")
+texture_disabled = ExtResource("6_8kp0y")
+
+[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Green"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 70.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "???"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Green"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 91.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_font_sizes/font_size = 4
+text = "Unlock this character somewhere in the dungeon
+...
+
+
+
+???"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Locked" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
 layout_mode = 2
 disabled = true
@@ -258,3 +303,4 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Green" to="." method="_on_green_pressed"]

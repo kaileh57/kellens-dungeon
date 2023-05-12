@@ -28,8 +28,8 @@ func load_chars():
 		enable_red()
 	if unlocked.contains("blue"):
 		enable_blue()
-	if unlocked.contains("yellow"):
-		pass
+	if unlocked.contains("green"):
+		enable_green()
 	if unlocked.contains("green"):
 		pass
 
@@ -56,6 +56,16 @@ func enable_blue():
 	
 	Easy"""
 
+func enable_green():
+	$MenuBackground/Page1/HBoxContainer/Green.disabled = false
+	$MenuBackground/Page1/HBoxContainer/Green/Label.text = "Green"
+	$MenuBackground/Page1/HBoxContainer/Green/Label2.text = """Green is very strong, but very slow.
+	
+	
+	
+	
+	Easy"""
+
 func switch_scenes():
 	$"/root/GlobalSettings".character_name = character_name
 	$"/root/GlobalSettings".character_path = character_path
@@ -72,4 +82,9 @@ func _on_red_pressed():
 func _on_blue_pressed():
 	character_name = "blue"
 	character_path = "res://characters/blue/blue.tscn"
+	switch_scenes()
+
+func _on_green_pressed():
+	character_name = "green"
+	character_path = "res://characters/green/green.tscn"
 	switch_scenes()
