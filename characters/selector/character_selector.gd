@@ -45,12 +45,13 @@ func enable_red():
 	
 	
 	
-	Easy"""
+	Easy"""	
 
 func enable_blue():
 	$MenuBackground/Page1/HBoxContainer/Blue.disabled = false
 	$MenuBackground/Page1/HBoxContainer/Blue/Label.text = "Blue"
-	$MenuBackground/Page1/HBoxContainer/Blue/Label2.text = """Blue can go fast and attack fast, he can't take very many hits however.
+	$MenuBackground/Page1/HBoxContainer/Blue/Label2.text = """Blue can go fast and attack fast, he can't take very many hits.
+	
 	
 	
 	Easy"""

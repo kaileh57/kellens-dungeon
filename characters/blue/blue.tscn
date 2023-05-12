@@ -373,8 +373,7 @@ health = 3.0
 max_health = 3.0
 damage_multiplyer = 0.9
 atk_speed_multiplyer = 1.2
-accerelation = 60
-max_speed = 150
+max_speed = 120
 metadata/_edit_lock_ = true
 
 [node name="FSM" type="Node" parent="."]
