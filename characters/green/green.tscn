@@ -364,7 +364,7 @@ height = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h7y0"]
 radius = 7.07107
 
-[node name="green" type="CharacterBody2D"]
+[node name="Green" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_xo31e")
@@ -373,6 +373,7 @@ health = 7.0
 max_health = 7.0
 damage_multiplyer = 1.2
 atk_speed_multiplyer = 0.9
+stealth = 1.5
 accerelation = 20
 max_speed = 90
 metadata/_edit_lock_ = true
