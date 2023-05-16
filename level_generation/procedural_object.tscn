@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://wurtv0hls3bu"]
+
+[ext_resource type="Texture2D" uid="uid://db7atrwp6htp4" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/full tilemap.png" id="1_iqvi3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf615"]
+texture = ExtResource("1_iqvi3")
+
+[sub_resource type="TileSet" id="TileSet_07ka1"]
+sources/1 = SubResource("TileSetAtlasSource_uf615")
+
+[node name="ProceduralObject" type="TileMap"]
+tile_set = SubResource("TileSet_07ka1")
+format = 2
