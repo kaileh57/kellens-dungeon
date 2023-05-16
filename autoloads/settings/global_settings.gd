@@ -23,11 +23,6 @@ func boot():#util function to print selected settings
 
 
 
-func _process(delta):
-	player_list.clear()
-	for i in players.get_children():
-		player_list.append(i)
-
 
 #game vars
 var difficulty: String
