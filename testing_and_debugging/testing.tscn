@@ -353,7 +353,7 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_0j5q2")
 
-[node name="Testing" type="Node2D"]
+[node name="Base" type="Node2D"]
 script = ExtResource("1_ov6h7")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -366,26 +366,35 @@ layer_0/tile_data = PackedInt32Array(65537, 262144, 5, 131073, 262144, 8, 196609
 [node name="Other" type="TileMap" parent="NavigationRegion2D"]
 format = 2
 
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
 [node name="Wpns16x16BlackOutline" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(877, 853)
 texture = ExtResource("3_vgrh0")
 
 [node name="0x72DungeonTilesetIiV16" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(513, 1015)
 texture = ExtResource("4_2bggi")
 
 [node name="All-assets-preview" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-169, 1030)
 texture = ExtResource("5_g0m8k")
 
 [node name="All-assets-preview2" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(1388, 1100)
 texture = ExtResource("6_7nvde")
 
 [node name="SiCellar" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(391, 1519)
 texture = ExtResource("7_tox2y")
 
 [node name="SprFreeDungeon" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-267, 1479)
 texture = ExtResource("8_6hemf")

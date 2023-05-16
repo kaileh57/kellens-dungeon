@@ -49,6 +49,7 @@ enum {UP, DOWN}
 @export var max_health: float = 2
 @export var damage_multiplyer: float = 1
 @export var atk_speed_multiplyer: float = 1
+@export var stealth: float = 1 #multiplier for enemy detection radius
 
 #sets the current item to the first one the player has(if they have one)
 func _ready():
