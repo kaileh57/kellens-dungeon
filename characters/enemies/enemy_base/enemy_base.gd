@@ -5,6 +5,10 @@ class_name EnemyBase
 #define the nodes used for pathfinding
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var navigation: NavigationRegion2D = get_tree().current_scene.find_node("NavigationRegion2D")
+#
+#ADD VARS TO PULL DATA FROM PROC LEVEL, NOT FROM GLOBAL SETTINGS
+#
+#players: Node2D = get_tree().current_scene.find_node("Players")
 
 var target: CharacterBody2D
 @onready var hitbox = $HurtBox
