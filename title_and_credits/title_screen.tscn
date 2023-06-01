@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3votahmbu2nd"]
+[gd_scene load_steps=12 format=3 uid="uid://c3votahmbu2nd"]
 
-[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/Quinquefive-0Wonv.ttf" id="1_3b8y2"]
 [ext_resource type="Script" path="res://title_and_credits/title_screen.gd" id="1_c25g7"]
 [ext_resource type="Texture2D" uid="uid://c224h7yob0kvg" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button.png" id="2_0qnj5"]
 [ext_resource type="Script" path="res://title_and_credits/button_manager.gd" id="2_esq3n"]
@@ -96,7 +95,6 @@ metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="CanvasLayer/MarginContainer/Vbox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3b8y2")
 theme_override_font_sizes/font_size = 23
 text = "Dungeon game"
 horizontal_alignment = 1
@@ -104,7 +102,6 @@ metadata/_edit_lock_ = true
 
 [node name="Subtitle" type="Label" parent="CanvasLayer/MarginContainer/Vbox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3b8y2")
 theme_override_font_sizes/font_size = 7
 text = "By: kellen.H"
 horizontal_alignment = 1
@@ -141,7 +138,6 @@ anchor_bottom = 1.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_3b8y2")
 theme_override_font_sizes/font_size = 10
 text = "Start"
 horizontal_alignment = 1
@@ -170,7 +166,6 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0.32549)
-theme_override_fonts/font = ExtResource("1_3b8y2")
 theme_override_font_sizes/font_size = 6
 text = "Multiplayer"
 horizontal_alignment = 1
@@ -196,7 +191,6 @@ anchor_bottom = 1.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_3b8y2")
 theme_override_font_sizes/font_size = 10
 text = "Quit"
 horizontal_alignment = 1

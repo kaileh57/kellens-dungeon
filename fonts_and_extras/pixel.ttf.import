@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://2ylwwutv16mk"
-path="res://.godot/imported/Quinquefive-0Wonv.ttf-0f9aa673259908a3e639dc01bea405a3.fontdata"
+path="res://.godot/imported/pixel.ttf-aaea68f161633d3081c5b0b6d56a2684.fontdata"
 
 [deps]
 
-source_file="res://fonts_and_extras/Quinquefive-0Wonv.ttf"
-dest_files=["res://.godot/imported/Quinquefive-0Wonv.ttf-0f9aa673259908a3e639dc01bea405a3.fontdata"]
+source_file="res://fonts_and_extras/pixel.ttf"
+dest_files=["res://.godot/imported/pixel.ttf-aaea68f161633d3081c5b0b6d56a2684.fontdata"]
 
 [params]
 

@@ -1,24 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://dw4fn4amfei7"]
+[gd_scene load_steps=13 format=3 uid="uid://dw4fn4amfei7"]
 
 [ext_resource type="Texture2D" uid="uid://cnhb8d32i57sa" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu background.png" id="1_6fl5s"]
 [ext_resource type="Script" path="res://characters/selector/character_selector.gd" id="1_cpph7"]
+[ext_resource type="Texture2D" uid="uid://b1fhhic6aca0w" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_under.png" id="3_e502q"]
 [ext_resource type="Texture2D" uid="uid://h6kry0u473gd" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon.png" id="3_gbbpt"]
-[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/Quinquefive-0Wonv.ttf" id="3_ps6hh"]
 [ext_resource type="Texture2D" uid="uid://dmh3fqxydxvod" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon_pressed.png" id="4_2essb"]
+[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/pixel.ttf" id="4_p4nqq"]
 [ext_resource type="Texture2D" uid="uid://c7hv0lr8ghj7n" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon_hover.png" id="5_5y7uc"]
 [ext_resource type="Texture2D" uid="uid://dcspugeio4frl" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/idle_icon_blacked.png" id="6_8kp0y"]
-[ext_resource type="Texture2D" uid="uid://wslay7e2yp2a" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/blue/blue_idle_icon.png" id="8_ofe3o"]
-[ext_resource type="Texture2D" uid="uid://b45nmglaenff1" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/blue/blue_idle_icon_pressed.png" id="9_cbt24"]
-[ext_resource type="Texture2D" uid="uid://co0lyx86myqfx" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/blue/blue_idle_icon_hover.png" id="10_s1sms"]
-[ext_resource type="Texture2D" uid="uid://n1oe421l7hqs" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/green/green_idle_icon.png" id="11_8yqu7"]
-[ext_resource type="Texture2D" uid="uid://dha70cg4bt05n" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/green/green_idle_icon_pressed.png" id="12_8ln81"]
-[ext_resource type="Texture2D" uid="uid://mg6186rbtaic" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/green/green_idle_icon_hover.png" id="13_qrpub"]
-[ext_resource type="Texture2D" uid="uid://ba6hrvjan5n3" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/yellow/yellow_idle_icon.png" id="14_gflpf"]
-[ext_resource type="Texture2D" uid="uid://cr0ye3g5t10ya" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/yellow/yellow_idle_icon_pressed.png" id="15_tag6q"]
-[ext_resource type="Texture2D" uid="uid://cc1a5gpoxbixe" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/yellow/yellow_idle_icon_hover.png" id="16_1gdff"]
-[ext_resource type="Texture2D" uid="uid://dortvauswnrsq" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/purple/purple_idle_icon.png" id="17_srla8"]
-[ext_resource type="Texture2D" uid="uid://bchvwq3ndds2n" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/purple/purple_idle_icon_pressed.png" id="18_g7jor"]
-[ext_resource type="Texture2D" uid="uid://cro0n5gi27nc4" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/purple/purple_idle_icon_hover.png" id="19_6nnhy"]
 
 [sub_resource type="Animation" id="Animation_sb26c"]
 length = 0.001
@@ -58,7 +47,7 @@ _data = {
 }
 
 [sub_resource type="Theme" id="Theme_v8c76"]
-default_font = ExtResource("3_ps6hh")
+default_font = ExtResource("4_p4nqq")
 Label/font_sizes/font_size = 7
 
 [node name="CharacterSelector" type="Control"]
@@ -71,6 +60,7 @@ grow_vertical = 2
 script = ExtResource("1_cpph7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -100,6 +90,27 @@ theme_override_constants/margin_bottom = 10
 [node name="MenuBackground" type="Sprite2D" parent="."]
 position = Vector2(241, 105)
 texture = ExtResource("1_6fl5s")
+
+[node name="BottomText" type="Sprite2D" parent="MenuBackground"]
+visible = false
+position = Vector2(0, 129)
+texture = ExtResource("3_e502q")
+
+[node name="Label" type="Label" parent="MenuBackground/BottomText"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -24.0
+offset_right = -92.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p4nqq")
+theme_override_font_sizes/font_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Page1" type="MarginContainer" parent="MenuBackground"]
 anchors_preset = 15
@@ -167,186 +178,6 @@ text = "If this text is visible, something broke lol.
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Blue" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("8_ofe3o")
-texture_pressed = ExtResource("9_cbt24")
-texture_hover = ExtResource("10_s1sms")
-texture_disabled = ExtResource("6_8kp0y")
-
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Blue"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Blue"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "Unlock this character somewhere in the dungeon
-...
-
-
-
-???"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Green" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("11_8yqu7")
-texture_pressed = ExtResource("12_8ln81")
-texture_hover = ExtResource("13_qrpub")
-texture_disabled = ExtResource("6_8kp0y")
-
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Green"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Green"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "Unlock this character somewhere in the dungeon
-...
-
-
-
-???"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Yellow" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("14_gflpf")
-texture_pressed = ExtResource("15_tag6q")
-texture_hover = ExtResource("16_1gdff")
-texture_disabled = ExtResource("6_8kp0y")
-
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Yellow"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Yellow"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "Unlock this character somewhere in the dungeon
-...
-
-
-
-???"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Purple" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
-layout_mode = 2
-disabled = true
-texture_normal = ExtResource("17_srla8")
-texture_pressed = ExtResource("18_g7jor")
-texture_hover = ExtResource("19_6nnhy")
-texture_disabled = ExtResource("6_8kp0y")
-
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Purple"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Purple"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "Unlock this character somewhere in the dungeon
-...
-
-
-
-???"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Locked" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
 layout_mode = 2
 disabled = true
@@ -400,8 +231,6 @@ offset_bottom = 33.0
 text = "Choose Your Character:"
 horizontal_alignment = 1
 
+[connection signal="mouse_entered" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="_on_red_mouse_entered"]
+[connection signal="mouse_exited" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="hide_bottom"]
 [connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Green" to="." method="_on_green_pressed"]
-[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Yellow" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Purple" to="." method="_on_purple_pressed"]
