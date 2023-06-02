@@ -41,13 +41,13 @@ func _ready():
 
 
 #rotates and flips the item to what it should be
-func move(mouse_direction: Vector2):
+func move(aim_direction: Vector2):
 	if not animation_player.is_playing() or animation_player.current_animation == "charge":
-		rotation = mouse_direction.angle()
+		rotation = aim_direction.angle()
 		#hitbox.knockback_direction = mouse_direction
-		if scale.y == 1 and mouse_direction.x < 0:
+		if scale.y == 1 and aim_direction.x < 0:
 			scale.y = -1
-		elif scale.y == -1 and mouse_direction.x > 0:
+		elif scale.y == -1 and aim_direction.x > 0:
 			scale.y = 1
 
 #these 2 tween functions are used to slide the item from the player to the ground

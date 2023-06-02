@@ -36,14 +36,15 @@ enum {UP, DOWN}
 
 
 
-
 @onready var items: Node2D = get_node("Items")
 @onready var fsm: FSM = $FSM #($ is a shorthand for get node)
 @onready var animation_player: AnimationPlayer = get_node("SpriteAnimator")
-
+@onready var aim = $Aim
+@onready var camera = $Camera2D
 
 #Export Variables:
 @export var assigned_control_set := 1
+@export var assigned_control_deadzone := 0.2
 var stat_mult := 1.0
 @export var max_items: int = 6
 var damagable: bool = true
@@ -67,15 +68,19 @@ func _ready():
 
 #checks if the player should be flipped and rotates the current item based on mouse position
 func _process(_delta):
-	var mouse_direction: Vector2
-	mouse_direction = (get_global_mouse_position() - global_position).normalized()
-	if mouse_direction.x > 0 and animated_sprite.flip_h:
+	var aim_direction: Vector2
+	aim_direction = aim.aim_dir
+	if aim_direction.x > 0 and animated_sprite.flip_h:
 		animated_sprite.flip_h = false
-	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
+	elif aim_direction.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true
 	if items.get_child_count() != 0:
-		current_item.move(mouse_direction)
+		current_item.move(aim_direction)
 	get_input()
+
+func assign():
+	aim.assign()
+
 
 #checks for inputs
 func get_input():

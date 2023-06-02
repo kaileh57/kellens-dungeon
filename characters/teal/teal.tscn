@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2wq5ottlvtbs"]
+[gd_scene load_steps=35 format=3 uid="uid://c2wq5ottlvtbs"]
 
 [ext_resource type="Script" path="res://characters/player_base/player_base.gd" id="1_7pli7"]
 [ext_resource type="Script" path="res://characters/fsm/fsm.gd" id="2_of4wp"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hurtbox.gd" id="3_h3yh8"]
 [ext_resource type="Texture2D" uid="uid://dm3l3p4luwmac" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_idle.png" id="4_w8ai0"]
 [ext_resource type="Texture2D" uid="uid://xo5wfk4k42gw" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_move.png" id="5_0rv1e"]
+[ext_resource type="Texture2D" uid="uid://w8lu448qmyig" path="res://art/consolesaveindicator.png" id="7_wtlvx"]
+[ext_resource type="Script" path="res://characters/player_base/aim.gd" id="8_rswqc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngo83"]
 atlas = ExtResource("3_4otar")
@@ -407,6 +409,7 @@ shape = SubResource("CapsuleShape2D_yeelj")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 metadata/_edit_lock_ = true
 
 [node name="Items" type="Node2D" parent="."]
@@ -420,3 +423,8 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_7h7y0")
 
 [node name="santi" type="Node" parent="."]
+
+[node name="Aim" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_wtlvx")
+script = ExtResource("8_rswqc")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm3swtx8egtf2"]
+[gd_scene load_steps=16 format=3 uid="uid://bwcukgt47u58f"]
 
 [ext_resource type="Script" path="res://characters/fsm/fsm.gd" id="2_eabtm"]
 [ext_resource type="Script" path="res://characters/player_base/player_base.gd" id="2_ukeo8"]
 [ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hurtbox.gd" id="3_c87aq"]
+[ext_resource type="Texture2D" uid="uid://w8lu448qmyig" path="res://art/consolesaveindicator.png" id="4_ueunx"]
+[ext_resource type="Script" path="res://characters/player_base/aim.gd" id="5_bhujw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcdx0"]
 resource_local_to_scene = true
@@ -253,6 +255,7 @@ radius = 7.07107
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("2_ukeo8")
+assigned_control_deadzone = 0.1
 metadata/_edit_lock_ = true
 
 [node name="FSM" type="Node" parent="."]
@@ -284,6 +287,7 @@ shape = SubResource("CapsuleShape2D_yeelj")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 metadata/_edit_lock_ = true
 
 [node name="Items" type="Node2D" parent="."]
@@ -297,3 +301,8 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_7h7y0")
 
 [node name="base" type="Node" parent="."]
+
+[node name="Aim" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_ueunx")
+script = ExtResource("5_bhujw")
