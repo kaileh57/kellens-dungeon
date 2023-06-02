@@ -43,6 +43,7 @@ enum {UP, DOWN}
 
 
 #Export Variables:
+@export var assigned_control_set := 1
 var stat_mult := 1.0
 @export var max_items: int = 6
 var damagable: bool = true
@@ -80,13 +81,13 @@ func _process(_delta):
 func get_input():
 	#movement inputs
 	move_direction = Vector2.ZERO
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed(str("down" + str(assigned_control_set))):
 		move_direction += Vector2.DOWN
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed(str("left" + str(assigned_control_set))):
 		move_direction += Vector2.LEFT
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed(str("right" + str(assigned_control_set))):
 		move_direction += Vector2.RIGHT
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed(str("up" + str(assigned_control_set))):
 		move_direction += Vector2.UP
 	#item scrolling/dropping inputs
 	var item_count = items.get_child_count()
