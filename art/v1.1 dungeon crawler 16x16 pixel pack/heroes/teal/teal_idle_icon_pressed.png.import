@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dha70cg4bt05n"
-path="res://.godot/imported/green_idle_icon_pressed.png-8fd7b2ef9a610eb46579fc1ba7c7107c.ctex"
+uid="uid://c1iffgcwg2ebf"
+path="res://.godot/imported/teal_idle_icon_pressed.png-cb39be1343e6273ad6c82aa4c105b408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/green/green_idle_icon_pressed.png"
-dest_files=["res://.godot/imported/green_idle_icon_pressed.png-8fd7b2ef9a610eb46579fc1ba7c7107c.ctex"]
+source_file="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_idle_icon_pressed.png"
+dest_files=["res://.godot/imported/teal_idle_icon_pressed.png-cb39be1343e6273ad6c82aa4c105b408.ctex"]
 
 [params]
 

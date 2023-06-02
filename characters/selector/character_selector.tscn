@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw4fn4amfei7"]
+[gd_scene load_steps=16 format=3 uid="uid://dw4fn4amfei7"]
 
 [ext_resource type="Texture2D" uid="uid://cnhb8d32i57sa" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu background.png" id="1_6fl5s"]
 [ext_resource type="Script" path="res://characters/selector/character_selector.gd" id="1_cpph7"]
@@ -8,6 +8,9 @@
 [ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/pixel.ttf" id="4_p4nqq"]
 [ext_resource type="Texture2D" uid="uid://c7hv0lr8ghj7n" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon_hover.png" id="5_5y7uc"]
 [ext_resource type="Texture2D" uid="uid://dcspugeio4frl" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/idle_icon_blacked.png" id="6_8kp0y"]
+[ext_resource type="Texture2D" uid="uid://bwv8h1u246pc0" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_idle_icon.png" id="9_qqeqj"]
+[ext_resource type="Texture2D" uid="uid://c1iffgcwg2ebf" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_idle_icon_pressed.png" id="10_v52ki"]
+[ext_resource type="Texture2D" uid="uid://cf66shct3sfd" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/teal/teal_idle_icon_hover.png" id="11_6jr0g"]
 
 [sub_resource type="Animation" id="Animation_sb26c"]
 length = 0.001
@@ -96,19 +99,38 @@ visible = false
 position = Vector2(0, 129)
 texture = ExtResource("3_e502q")
 
-[node name="Label" type="Label" parent="MenuBackground/BottomText"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuBackground/BottomText"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -24.0
-offset_right = -92.0
-offset_bottom = -24.0
+offset_left = -87.0
+offset_top = -22.0
+offset_right = -97.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/BottomText/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MenuBackground/BottomText/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_p4nqq")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 8
+text = "Default"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Flavor" type="Label" parent="MenuBackground/BottomText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_p4nqq")
+theme_override_font_sizes/font_size = 3
+text = "Flavor
+Flavor
+Flavor
+Flavor"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -132,7 +154,10 @@ theme_override_constants/margin_right = 15
 layout_mode = 2
 theme = SubResource("Theme_v8c76")
 
-[node name="Red" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/Page1/HBoxContainer"]
+layout_mode = 2
+
+[node name="Default" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("3_gbbpt")
@@ -140,87 +165,16 @@ texture_pressed = ExtResource("4_2essb")
 texture_hover = ExtResource("5_5y7uc")
 texture_disabled = ExtResource("6_8kp0y")
 
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Red"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuBackground/Page1/HBoxContainer"]
+layout_mode = 2
 
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Red"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "If this text is visible, something broke lol.
-
-
-
-
-
-???"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Locked" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer"]
+[node name="Teal" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("3_gbbpt")
-texture_pressed = ExtResource("4_2essb")
-texture_hover = ExtResource("5_5y7uc")
+texture_normal = ExtResource("9_qqeqj")
+texture_pressed = ExtResource("10_v52ki")
+texture_hover = ExtResource("11_6jr0g")
 texture_disabled = ExtResource("6_8kp0y")
-
-[node name="Label" type="Label" parent="MenuBackground/Page1/HBoxContainer/Locked"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 70.0
-offset_bottom = -82.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "???"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MenuBackground/Page1/HBoxContainer/Locked"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 91.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 4
-text = "Unlock this character somewhere in the dungeon
-...
-
-(dev only cant be unlocked)
-"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Title" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -231,6 +185,9 @@ offset_bottom = 33.0
 text = "Choose Your Character:"
 horizontal_alignment = 1
 
-[connection signal="mouse_entered" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="_on_red_mouse_entered"]
-[connection signal="mouse_exited" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="hide_bottom"]
-[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/Red" to="." method="_on_red_pressed"]
+[connection signal="mouse_entered" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="_on_default_mouse_entered"]
+[connection signal="mouse_exited" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="hide_bottom"]
+[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="_on_default_pressed"]
+[connection signal="mouse_entered" from="MenuBackground/Page1/HBoxContainer/VBoxContainer2/Teal" to="." method="_on_teal_mouse_entered"]
+[connection signal="mouse_exited" from="MenuBackground/Page1/HBoxContainer/VBoxContainer2/Teal" to="." method="hide_bottom"]
+[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/VBoxContainer2/Teal" to="." method="_on_teal_pressed"]

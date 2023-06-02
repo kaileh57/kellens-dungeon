@@ -1,6 +1,3 @@
 unlocked:
-	red
-	blue
-	green
-	yellow
-	purple
+	default
+	teal

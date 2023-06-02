@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h0bemfryinyc"
-path="res://.godot/imported/green_move.png-2191329a3a734411364f6c5290c20cd0.ctex"
+uid="uid://mg6186rbtaic"
+path="res://.godot/imported/green_idle_icon_hover.png-be7d7a69e8041fd895442020b6fffd1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/green/green_move.png"
-dest_files=["res://.godot/imported/green_move.png-2191329a3a734411364f6c5290c20cd0.ctex"]
+source_file="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/purple/green/green_idle_icon_hover.png"
+dest_files=["res://.godot/imported/green_idle_icon_hover.png-be7d7a69e8041fd895442020b6fffd1a.ctex"]
 
 [params]
 

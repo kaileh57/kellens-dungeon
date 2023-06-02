@@ -295,3 +295,5 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource("CircleShape2D_7h7y0")
+
+[node name="base" type="Node" parent="."]

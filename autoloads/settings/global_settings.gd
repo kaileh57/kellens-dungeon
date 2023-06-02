@@ -13,7 +13,7 @@ var mode: int = 0 #used to set build mode, 0 for dev, 1 for experimental, 2 for 
 
 
 
-var testing = false
+var testing = true
 
 func boot():#util function to print selected settings
 	debug.debug_print("selected variables:")

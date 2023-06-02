@@ -12,22 +12,26 @@ extends Control
 var page := 1
 
 
-var character_name
-var character_path
 
+
+var default := false
+var teal := false
 
 func _ready():
 	load_chars()
+	$ColorRect.show()
 	$ColorRect/AnimationPlayer.play("fade")
 
 
 # Load which characters are unlocked from txt file
 func load_chars():
 	var unlocked = FileAccess.open(path,FileAccess.READ).get_as_text()
-	if unlocked.contains("red"):
-		enable_red()
-	if unlocked.contains("blue"):
-		pass#enable_blue()
+	if unlocked.contains("default"):
+		default = true
+		$MenuBackground/Page1/HBoxContainer/VBoxContainer/Default.disabled = false
+	if unlocked.contains("teal"):
+		teal = true
+		$MenuBackground/Page1/HBoxContainer/VBoxContainer2/Teal.disabled = false
 	if unlocked.contains("green"):
 		pass#enable_green()
 	if unlocked.contains("yellow"):
@@ -37,24 +41,8 @@ func load_chars():
 
 
 
-# Utility functions to enable character buttons
-func enable_red():
-	$MenuBackground/Page1/HBoxContainer/Red.disabled = false
-	$MenuBackground/Page1/HBoxContainer/Red/Label.text = "Red"
-	$MenuBackground/Page1/HBoxContainer/Red/Label2.text = """A basic character with no abilities of effects.
-	
-	
-	
-	
-	
-	Easy"""	
 
-	
-	
-	
-
-
-func switch_scenes():
+func switch_scenes(character_name,character_path):
 	$"/root/GlobalSettings".character_name = character_name
 	$"/root/GlobalSettings".character_path = character_path
 	$ColorRect/AnimationPlayer.play_backwards("fade")
@@ -62,24 +50,34 @@ func switch_scenes():
 	if $"/root/GlobalSettings".testing == true:get_tree().change_scene_to_file($"/root/GlobalSettings".test_path)
 	elif $"/root/GlobalSettings".testing == false:get_tree().change_scene_to_file($"/root/GlobalSettings".game_path)
 
-func _on_red_pressed():
-	character_name = "red"
-	character_path = "res://characters/red/red.tscn"
-	switch_scenes()
-
-func show_bottom(tooltip: String):
-	$MenuBackground/BottomText/Label.text = tooltip
+func show_bottom(title:String, flavor: String):
+	$MenuBackground/BottomText/MarginContainer/VBoxContainer/Title.text = title
+	$MenuBackground/BottomText/MarginContainer/VBoxContainer/Flavor.text = flavor
 	$MenuBackground/BottomText.show()
 
 func hide_bottom():
 	$MenuBackground/BottomText.hide()
 
 
-func _on_red_mouse_entered():
-	if $MenuBackground/Page1/HBoxContainer/Red/Label.text == "Red":
-		show_bottom("""Basic, uninteresting, and default.
-		
-		EASY""")
+func _on_default_mouse_entered():
+	if default:
+		show_bottom("Default","Basic, uninteresting, and default. A good choice for new players. [No abilities]")
+	else:
+		show_bottom("???",str("                      ????" + "\n" + "                      ????" + "\n" + "                      ????" + "\n" + "                      ????"))
+
+func _on_teal_mouse_entered():
+	if teal:
+		show_bottom("Teal [Santi]","A truly speedy lad. His lack of attentiveness can lead to a quick death. Also enjoys stabbing")
+	else:
+		show_bottom("???",str("                      ????" + "\n" + "                      ????" + "\n" + "                      ????" + "\n" + "                      ????"))
+
+
+func _on_default_pressed():
+	switch_scenes("default","res://characters/default/default.tscn")
+
+
+func _on_teal_pressed():
+	switch_scenes("teal","res://characters/teal/teal.tscn")
 
 
 

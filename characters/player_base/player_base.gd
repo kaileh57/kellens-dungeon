@@ -43,13 +43,20 @@ enum {UP, DOWN}
 
 
 #Export Variables:
+var stat_mult := 1.0
 @export var max_items: int = 6
-@export var damagable: bool = true
-@export var health: float = 2
-@export var max_health: float = 2
-@export var damage_multiplyer: float = 1
+var damagable: bool = true
+@export var health: float = 4
+@export var max_health: float = 4
+@export var defense: float = 1 #incoming damage is divided by this
+@export var atk_damage_multiplyer: float = 1
 @export var atk_speed_multiplyer: float = 1
 @export var stealth: float = 1 #multiplier for enemy detection radius
+@export var vision: float = 1
+@export var ranged_accuracy: float = 1
+@export var aim_assist: float = 0 #max number of degrees a projectile will home to its target
+@export var potion_afinity: float = 1 #multiplier for potion duration
+@export var healing_afinity: float = 1 #multiplier specific to healing and regeneration
 
 #sets the current item to the first one the player has(if they have one)
 func _ready():
