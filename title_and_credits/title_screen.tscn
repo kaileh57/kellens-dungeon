@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3votahmbu2nd"]
+[gd_scene load_steps=14 format=3 uid="uid://c3votahmbu2nd"]
 
 [ext_resource type="Script" path="res://title_and_credits/title_screen.gd" id="1_c25g7"]
 [ext_resource type="Texture2D" uid="uid://c224h7yob0kvg" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button.png" id="2_0qnj5"]
+[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/pixel.ttf" id="2_8sviu"]
 [ext_resource type="Script" path="res://title_and_credits/button_manager.gd" id="2_esq3n"]
 [ext_resource type="Texture2D" uid="uid://dxmg53td2sroq" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button_press.png" id="3_xjj7o"]
 [ext_resource type="Texture2D" uid="uid://dq1puefvlqdai" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button-hover.png" id="4_dhmu3"]
 [ext_resource type="Texture2D" uid="uid://cxduiol4bxy40" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button-disabled-export.png" id="5_65ogw"]
 [ext_resource type="Script" path="res://title_and_credits/testing_button.gd" id="8_oav5x"]
 [ext_resource type="Script" path="res://title_and_credits/fade.gd" id="9_ti3sc"]
+
+[sub_resource type="Theme" id="Theme_aj1l3"]
+default_font = ExtResource("2_8sviu")
+Fonts/fonts/normal = ExtResource("2_8sviu")
 
 [sub_resource type="Animation" id="Animation_5rni4"]
 length = 0.001
@@ -83,6 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_aj1l3")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
