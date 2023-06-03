@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ojr3mlwr8d1x"]
+[gd_scene load_steps=3 format=3 uid="uid://ojr3mlwr8d1x"]
 
 [ext_resource type="Script" path="res://game_configs/2/2_player.gd" id="1_angd6"]
-[ext_resource type="PackedScene" uid="uid://iqj4wtm43ftj" path="res://testing_and_debugging/testing.tscn" id="1_yyjvr"]
 [ext_resource type="Script" path="res://game_configs/camera_tracking.gd" id="3_drrjw"]
 
 [node name="2Player" type="Node2D"]
@@ -13,47 +12,41 @@ offset_bottom = 2.0
 
 [node name="SubViewport" type="SubViewport" parent="Master"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(250, 270)
 render_target_clear_mode = 1
 render_target_update_mode = 4
-
-[node name="Base" parent="Master/SubViewport" instance=ExtResource("1_yyjvr")]
 
 [node name="Container1" type="SubViewportContainer" parent="."]
 offset_right = 240.0
 offset_bottom = 270.0
 
 [node name="SubViewport" type="SubViewport" parent="Container1"]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-size = Vector2i(960, 1080)
+size = Vector2i(240, 270)
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="Container1/SubViewport"]
-zoom = Vector2(4, 4)
 script = ExtResource("3_drrjw")
 
 [node name="Container2" type="SubViewportContainer" parent="."]
-offset_left = 960.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 240.0
+offset_right = 480.0
+offset_bottom = 270.0
 
 [node name="SubViewport" type="SubViewport" parent="Container2"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(960, 1080)
+size = Vector2i(240, 270)
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="Container2/SubViewport"]
-zoom = Vector2(4, 4)
 script = ExtResource("3_drrjw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 955.0
-offset_right = 965.0
-offset_bottom = 1080.0
+offset_left = 235.0
+offset_right = 245.0
+offset_bottom = 270.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
