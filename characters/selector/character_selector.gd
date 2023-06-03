@@ -43,8 +43,6 @@ func load_chars():
 
 
 func switch_scenes(character_name,character_path):
-	$"/root/GlobalSettings".character_name = character_name
-	$"/root/GlobalSettings".character_path = character_path
 	$ColorRect/AnimationPlayer.play_backwards("fade")
 	await get_tree().create_timer(0.3).timeout
 	if $"/root/GlobalSettings".testing == true:get_tree().change_scene_to_file($"/root/GlobalSettings".test_path)

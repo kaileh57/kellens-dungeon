@@ -26,6 +26,4 @@ func boot():#util function to print selected settings
 
 #game vars
 var difficulty: String
-var character_name: String
-var character_path: String
 var player_list := []
