@@ -21,7 +21,11 @@ offset_right = 240.0
 offset_bottom = 270.0
 
 [node name="SubViewport" type="SubViewport" parent="Container1"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(240, 270)
+size_2d_override = Vector2i(240, 270)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="Container1/SubViewport"]
@@ -45,8 +49,8 @@ script = ExtResource("3_drrjw")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 235.0
-offset_right = 245.0
+offset_left = 239.0
+offset_right = 241.0
 offset_bottom = 270.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)

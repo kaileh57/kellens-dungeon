@@ -45,6 +45,7 @@ func load_chars():
 func switch_scenes(character_name,character_path):
 	$ColorRect/AnimationPlayer.play_backwards("fade")
 	await get_tree().create_timer(0.3).timeout
+	$"/root/GlobalSettings".character_path = character_path
 	if $"/root/GlobalSettings".testing == true:get_tree().change_scene_to_file($"/root/GlobalSettings".test_path)
 	elif $"/root/GlobalSettings".testing == false:get_tree().change_scene_to_file($"/root/GlobalSettings".game_path)
 
@@ -59,7 +60,7 @@ func hide_bottom():
 
 func _on_default_mouse_entered():
 	if default:
-		show_bottom("Default","Basic, uninteresting, and default. A good choice for new players. [No abilities]")
+		show_bottom("Red [Default]","Basic, uninteresting, and default. A good choice for new players. [No abilities]")
 	else:
 		show_bottom("???",str("                      ????" + "\n" + "                      ????" + "\n" + "                      ????" + "\n" + "                      ????"))
 

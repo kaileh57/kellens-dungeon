@@ -22,7 +22,7 @@ func boot():#util function to print selected settings
 	debug.debug_print("game path: " + str(game_path))
 	debug.debug_print("test path: " + str(test_path))
 
-
+var character_path
 
 
 #game vars

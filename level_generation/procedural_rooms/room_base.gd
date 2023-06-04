@@ -25,8 +25,8 @@ func generate_room(min_w, max_w, min_h, max_h, count_min, count_max):
 	for i in room_comp:
 		room_w = randf_range(room_w_min, room_w_max)
 		room_h = randf_range(room_h_min, room_h_max)
-		var room_start_x = randf_range(1,4)
-		var room_start_y = randf_range(1,4)
+		var room_start_x = randf_range(-4,4)
+		var room_start_y = randf_range(-4,4)
 		if i == 0:
 			room_start_x = 0
 			room_start_y = 0
