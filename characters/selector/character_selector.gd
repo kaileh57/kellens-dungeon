@@ -30,8 +30,7 @@ func load_chars():
 		default = true
 		$MenuBackground/Page1/HBoxContainer/VBoxContainer/Default.disabled = false
 	if unlocked.contains("teal"):
-		teal = true
-		$MenuBackground/Page1/HBoxContainer/VBoxContainer2/Teal.disabled = false
+		pass
 	if unlocked.contains("green"):
 		pass#enable_green()
 	if unlocked.contains("yellow"):
