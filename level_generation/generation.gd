@@ -10,24 +10,14 @@ class_name generate
 
 
 #define generation variables
-var type = ""
-var difficulty = ""
-var boss_chance
-var dungeon_level
-var player_level
-var boss_level = false
-var enemies
-var theme_color
-var rooms
-var small_rooms
-var med_rooms
-var large_rooms
-var boss_rooms
-var loot_rooms
+var starting_rooms := ["",""]	
 
 
 #calculate generation parameters
 
 
 func _ready():
+	pass
+
+func place_starting_room():
 	pass

@@ -275,6 +275,7 @@ rb2={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="player detect"
 2d_physics/layer_5="loot"
+2d_physics/layer_6="ground obstructions"
 2d_physics/layer_7="player hit/hurt boxes"
 2d_physics/layer_8="enemy hit/hurt boxes"
 

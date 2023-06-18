@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2rrknqoxg4yi"]
+
+[ext_resource type="Texture2D" uid="uid://cyx3j5rs6tf4a" path="res://art/16x16 Assorted RPG Icons/16x16 Assorted RPG Icons/chests.png" id="1_xxmdp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dejs7"]
+atlas = ExtResource("1_xxmdp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yq4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dejs7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Chest" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1yq4a")
+frame_progress = 1.0
