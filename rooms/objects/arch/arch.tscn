@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsmkelub4phr8"]
+
+[ext_resource type="Texture2D" uid="uid://doc4jhbhufjmf" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/tiles/wall/door_fullyopen_baseless-export.png" id="1_6insb"]
+
+[node name="arch" type="Sprite2D"]
+z_index = 2
+texture = ExtResource("1_6insb")

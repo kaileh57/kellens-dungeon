@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7hichtqm00lo"]
+
+[ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://rooms/default/base/room_base.tscn" id="1_i08wu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t1f3"]
+size = Vector2(64, 16)
+
+[node name="TileMap" instance=ExtResource("1_i08wu")]
+layer_0/tile_data = PackedInt32Array(0, 262144, 6, 3, 196608, 6, 1, 131072, 6, 2, 131072, 6)
+
+[node name="Up" type="Marker2D" parent="Connectors" index="0"]
+position = Vector2(32, 8)
+
+[node name="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_2t1f3")

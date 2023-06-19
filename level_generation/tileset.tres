@@ -1,7 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dv4xbivll00rk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s0tae"]
-load_path = "res://.godot/imported/full tilemap.png-40671dfe4885a606df2b13b5cd1f922e.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekoxt"]
 texture = SubResource("CompressedTexture2D_s0tae")

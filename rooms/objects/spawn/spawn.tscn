@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq5us8nsmhwpm"]
+
+[ext_resource type="Texture2D" uid="uid://bwsdhgunigxp0" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/tiles/floor/floor_5.png" id="1_x73cp"]
+
+[node name="Spawn" type="Node2D"]
+
+[node name="Floor5" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_x73cp")
+
+[node name="Floor6" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+texture = ExtResource("1_x73cp")
+
+[node name="Floor7" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+texture = ExtResource("1_x73cp")
+
+[node name="Floor8" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("1_x73cp")
