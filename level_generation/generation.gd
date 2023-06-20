@@ -43,16 +43,20 @@ func place_starting_room():
 
 
 func generate_tick():
+	var points := 0
 	for room in rooms.get_children():
 		for point in room.find_child("Connectors").get_children():
 			if point != null:
 				randomize()
+				points += 1
 				if rng.randi() % 4 == 0: 
 					cap(point, point.name)
+					point.queue_free()
 				elif "Hallway" not in room.name:
 					place_hallway(point, point.name)
 				else:
 					place_room(point, point.name)
+	#if points != 0: generate_tick()
 	
 
 func cap(location: Marker2D, direction: String):
@@ -64,11 +68,23 @@ func cap(location: Marker2D, direction: String):
 	elif direction == "Left": room = left_cap[randi() % left_cap.size()].instantiate(); reverse_direction = "Right"
 	elif direction == "Right": room = right_cap[randi() % right_cap.size()].instantiate(); reverse_direction = "Left"
 	rooms.add_child(room)
-	room.global_position = location.global_position + room.find_child(reverse_direction).position * -1
+	var connector = room.find_child(reverse_direction)
+	room.global_position = location.global_position + connector.position * -1
 	room.name = "Cap"
+	connector.queue_free()
 
 func place_hallway(location: Marker2D, direction: String):
-	pass
+	var room
+	var reverse_direction: String
+	if direction == "Up": room = vert_hallways[randi() % vert_hallways.size()].instantiate(); reverse_direction = "Up"
+	elif direction == "Down": room = vert_hallways[randi() % vert_hallways.size()].instantiate(); reverse_direction = "Down"
+	elif direction == "Left": room = horz_hallways[randi() % horz_hallways.size()].instantiate(); reverse_direction = "Right"
+	elif direction == "Right": room = horz_hallways[randi() % horz_hallways.size()].instantiate(); reverse_direction = "Left"
+	rooms.add_child(room)
+	var connector = room.find_child(reverse_direction)
+	room.global_position = location.global_position + connector.position * -1
+	room.name = "Hallway"
+	connector.queue_free()
 
 func place_room(location: Marker2D, direction: String):
 	pass
