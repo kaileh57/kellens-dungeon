@@ -15,7 +15,7 @@ position = Vector2(128, -24)
 metadata/_edit_lock_ = true
 
 [node name="Left" type="Marker2D" parent="Connectors" index="1"]
-position = Vector2(16, 80)
+position = Vector2(24, 80)
 metadata/_edit_lock_ = true
 
 [node name="Right" type="Marker2D" parent="Connectors" index="2"]

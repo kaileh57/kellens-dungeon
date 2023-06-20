@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://rooms/default/base/room_base.tscn" id="1_s31ji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caqnu"]
-size = Vector2(16, 48)
+size = Vector2(16, 64)
 
 [node name="TileMap" instance=ExtResource("1_s31ji")]
 layer_0/tile_data = PackedInt32Array(-65534, 196608, 5, 2, 196608, 6, -131070, 196608, 5, -196606, 196608, 7)
@@ -12,5 +12,5 @@ layer_0/tile_data = PackedInt32Array(-65534, 196608, 5, 2, 196608, 6, -131070, 1
 position = Vector2(40, 0)
 
 [node name="CollisionShape2D" parent="Collider" index="0"]
-position = Vector2(40, -8)
+position = Vector2(40, -16)
 shape = SubResource("RectangleShape2D_caqnu")

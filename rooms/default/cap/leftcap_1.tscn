@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://rooms/default/base/room_base.tscn" id="1_pkikk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv0p6"]
-size = Vector2(16, 48)
+size = Vector2(16, 64)
 
 [node name="TileMap" instance=ExtResource("1_pkikk")]
 layer_0/tile_data = PackedInt32Array(131071, 262144, 6, 65535, 262144, 5, -1, 262144, 5, -65537, 262144, 7)
 
 [node name="Right" type="Marker2D" parent="Connectors" index="0"]
-position = Vector2(-16, 16)
+position = Vector2(-8, 16)
 
 [node name="CollisionShape2D" parent="Collider" index="0"]
-position = Vector2(-8, 8)
+position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_jv0p6")
