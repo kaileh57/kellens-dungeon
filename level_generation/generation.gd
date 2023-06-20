@@ -33,10 +33,35 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	place_starting_room()
+	generate_tick()
 
 func place_starting_room():
 	rng.randomize()
 	var room = starting_rooms[randi() % starting_rooms.size()].instantiate()
 	rooms.add_child(room)
+	
 	$"/root/Debug".debug_print(room)
+
+func generate_tick():
+	for room in rooms.get_children():
+		for point in room.find_child("Connectors").get_children():
+			rng.randomize()
+			if rng.randi() % 4 == 0: 
+				cap(point, point.name)
+			elif "Hallway" not in room.name:
+				place_hallway(point, point.name)
+			else:
+				place_room(point, point.name)
+	#if points.size() != 0: generate_tick()
+
+func cap(location: Marker2D, direction: String):
+	pass
+
+func place_hallway(location: Marker2D, direction: String):
+	pass
+
+func place_room(location: Marker2D, direction: String):
+	pass
+
+
 

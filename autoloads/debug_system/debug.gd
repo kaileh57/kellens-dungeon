@@ -12,5 +12,5 @@ func _ready():
 
 func debug_print(message):#default debug system, designed to be changed in the future
 	if in_engine_debug == true:
-		print(message)
+		print("DEBUG: " + str(message))
 
