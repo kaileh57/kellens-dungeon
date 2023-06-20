@@ -6,10 +6,10 @@
 size = Vector2(16, 48)
 
 [node name="TileMap" instance=ExtResource("1_pkikk")]
-layer_0/tile_data = PackedInt32Array(131071, 262144, 6, 65535, 262144, 5, -1, 262144, 7)
+layer_0/tile_data = PackedInt32Array(131071, 262144, 6, 65535, 262144, 5, -1, 262144, 5, -65537, 262144, 7)
 
 [node name="Right" type="Marker2D" parent="Connectors" index="0"]
-position = Vector2(-8, 8)
+position = Vector2(-16, 16)
 
 [node name="CollisionShape2D" parent="Collider" index="0"]
 position = Vector2(-8, 8)

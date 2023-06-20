@@ -479,7 +479,8 @@ sources/0 = SubResource("TileSetAtlasSource_mur6a")
 tile_set = SubResource("TileSet_c6iet")
 format = 2
 
-[node name="Connectors" type="Node" parent="."]
+[node name="Connectors" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="EnemySpawns" type="Node" parent="."]
 

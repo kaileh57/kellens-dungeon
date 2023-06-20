@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg6ynricccsye"]
+[gd_scene load_steps=3 format=3 uid="uid://bg6ynricccsye"]
 
 [ext_resource type="Script" path="res://level_generation/generation.gd" id="1_vpp20"]
+[ext_resource type="PackedScene" uid="uid://b5uabnh0o1k0v" path="res://rooms/default/mid/mid_1.tscn" id="2_7sb4x"]
 
 [node name="Generation" type="Node2D"]
 script = ExtResource("1_vpp20")
 
 [node name="Rooms" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Rooms" instance=ExtResource("2_7sb4x")]
+
+[node name="Testcam" type="Camera2D" parent="."]
+position = Vector2(132, 153)
