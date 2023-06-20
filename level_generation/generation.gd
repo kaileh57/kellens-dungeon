@@ -17,13 +17,7 @@ var placed_rooms := 0
 var starting_rooms := [preload("res://rooms/default/start/start_1.tscn")]
 var middle_rooms := [preload("res://rooms/default/mid/mid_1.tscn")]
 var end_rooms := [preload("res://rooms/default/end/end_1.tscn")]
-var vert_hallways := [preload("res://rooms/default/hallway/up_down/ud_1.tscn")]
-var horz_hallways := [preload("res://rooms/default/hallway/left_right/lr_1.tscn")]
-#hallway caps
-var up_cap := [preload("res://rooms/default/cap/upcap_1.tscn")]
-var down_cap := [preload("res://rooms/default/cap/downcap_1.tscn")]
-var left_cap := [preload("res://rooms/default/cap/leftcap_1.tscn")]
-var right_cap := [preload("res://rooms/default/cap/rightcap_1.tscn")]
+
 #
 var rng = RandomNumberGenerator.new()
 @onready var rooms = $Rooms
@@ -44,80 +38,6 @@ func place_starting_room():
 
 func generate_tick():
 	var mid_rooms := 0
-	var points := 0
-	for room in rooms.get_children():
-		if "Mid" in room.name: mid_rooms += 1
-		print(mid_rooms)
-		for point in room.find_child("Connectors").get_children():
-			if point != null:
-				randomize()
-				points += 1
-				if mid_rooms > target_rooms:
-					cap(point, point.name)
+	
 					
-				elif "Hallway" not in room.name:
-					place_hallway(point, point.name)
-					
-				else:
-					place_room(point, point.name)
-					
-
-
-func _input(event):
-	if Input.is_action_pressed("1"): generate_tick()
-
-
-func tick_alt():
-	generate_tick()
-
-func cap(location: Marker2D, direction: String):
-	var room
-	var reverse_direction: String
-	randomize()
-	if direction == "Up": room = up_cap[randi() % up_cap.size()].instantiate(); reverse_direction = "Down"
-	elif direction == "Down": room = down_cap[randi() % down_cap.size()].instantiate(); reverse_direction = "Up"
-	elif direction == "Left": room = left_cap[randi() % left_cap.size()].instantiate(); reverse_direction = "Right"
-	elif direction == "Right": room = right_cap[randi() % right_cap.size()].instantiate(); reverse_direction = "Left"
-	rooms.add_child(room)
-	var connector = room.find_child(reverse_direction)
-	room.global_position = location.global_position + connector.position * -1
-	room.name = "Cap"
-	connector.queue_free()
-	var collider = room.find_child("Collider")
-	if collider.has_overlapping_areas(): room.queue_free()
-	else: location.queue_free()
-
-func place_hallway(location: Marker2D, direction: String):
-	var room
-	var reverse_direction: String
-	if direction == "Up": room = vert_hallways[randi() % vert_hallways.size()].instantiate(); reverse_direction = "Down"
-	elif direction == "Down": room = vert_hallways[randi() % vert_hallways.size()].instantiate(); reverse_direction = "Up"
-	elif direction == "Left": room = horz_hallways[randi() % horz_hallways.size()].instantiate(); reverse_direction = "Right"
-	elif direction == "Right": room = horz_hallways[randi() % horz_hallways.size()].instantiate(); reverse_direction = "Left"
-	rooms.add_child(room)
-	var connector = room.find_child(reverse_direction)
-	room.global_position = location.global_position + connector.position * -1
-	room.name = "Hallway"
-	connector.queue_free()
-	var collider:Area2D = room.find_child("Collider")
-	if collider.has_overlapping_areas(): room.queue_free()
-	else: location.queue_free()
-
-func place_room(location: Marker2D, direction: String):
-	var room = middle_rooms[randi() % middle_rooms.size()].instantiate()
-	var reverse_direction: String
-	if direction == "Up": reverse_direction = "Down"
-	elif direction == "Down": reverse_direction = "Up"
-	elif direction == "Left": reverse_direction = "Right"
-	elif direction == "Right": reverse_direction = "Left"
-	rooms.add_child(room)
-	var connector = room.find_child(reverse_direction)
-	room.global_position = location.global_position + connector.position * -1
-	room.name = "Mid"
-	connector.queue_free()
-	var collider = room.find_child("Collider")
-	if collider.has_overlapping_areas(): room.queue_free()
-	else: location.queue_free()
-
-
 
