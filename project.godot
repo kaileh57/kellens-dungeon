@@ -21,14 +21,13 @@ GlobalSettings="*res://autoloads/settings/global_settings.gd"
 Debug="*res://autoloads/debug_system/debug.gd"
 MusicBus="*res://autoloads/music_bus/music_bus.tscn"
 Flag="*res://autoloads/corner_flag/flag.tscn"
+Settings="*res://autoloads/settings/settings.tscn"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/mode=2
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=0
 
 [input]
 
@@ -263,6 +262,11 @@ lb2={
 rb2={
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 

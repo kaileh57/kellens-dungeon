@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://2e2bhrkfpmpp"]
+
+[ext_resource type="Script" path="res://autoloads/settings/settings.gd" id="1_dmxci"]
+[ext_resource type="Texture2D" uid="uid://cnhb8d32i57sa" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu background.png" id="1_kb7b2"]
+
+[node name="Settings" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_dmxci")
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+texture = ExtResource("1_kb7b2")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 23.0
+offset_top = 35.0
+offset_right = 67.0
+offset_bottom = 59.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 63.0
+offset_top = 36.0
+offset_right = 103.0
+offset_bottom = 59.0
+text = "Borderless"
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
