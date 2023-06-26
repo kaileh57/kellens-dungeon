@@ -11,6 +11,8 @@ class_name generate
 
 #define generation variables
 @export var target_rooms := 15
+var tile_size := 16
+@onready var map_size := target_rooms * 4
 var placed_rooms := 0
 
 #room paths
@@ -27,7 +29,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	place_starting_room()
-	generate_tick()
+	place_mid_rooms()
 
 func place_starting_room():
 	randomize()
@@ -36,8 +38,13 @@ func place_starting_room():
 	room.name = "Start"
 
 
-func generate_tick():
-	var mid_rooms := 0
-	
-					
+func place_mid_rooms():
+	for i in target_rooms:
+		randomize()
+		var room = middle_rooms[randi() % middle_rooms.size()].instantiate()
+		rooms.add_child(room)
+		room.name = "Mid"
+		room.position.x = randf_range(-map_size, map_size) * tile_size
+		room.position.y = randf_range(-map_size, map_size) * tile_size
+		room.place(map_size, tile_size)
 

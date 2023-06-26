@@ -27,6 +27,7 @@ Settings="*res://autoloads/settings/settings.tscn"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [input]

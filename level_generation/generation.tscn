@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg6ynricccsye"]
+[gd_scene load_steps=2 format=3 uid="uid://bg6ynricccsye"]
 
 [ext_resource type="Script" path="res://level_generation/generation.gd" id="1_vpp20"]
-[ext_resource type="PackedScene" uid="uid://kybobnn5fg8t" path="res://characters/default/default.tscn" id="2_c4bic"]
 
 [node name="Generation" type="Node2D"]
 script = ExtResource("1_vpp20")
@@ -10,7 +9,4 @@ script = ExtResource("1_vpp20")
 
 [node name="Testcam" type="Camera2D" parent="."]
 position = Vector2(132, 153)
-enabled = false
 zoom = Vector2(0.1, 0.1)
-
-[node name="PlayerBase" parent="." instance=ExtResource("2_c4bic")]

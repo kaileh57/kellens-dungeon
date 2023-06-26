@@ -45,3 +45,6 @@ position = Vector2(200, 24)
 position = Vector2(128, 72)
 shape = SubResource("RectangleShape2D_s343x")
 metadata/_edit_lock_ = true
+
+[node name="Center" parent="." index="4"]
+position = Vector2(128, 72)
