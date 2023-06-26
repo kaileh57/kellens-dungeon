@@ -44,7 +44,7 @@ func place_mid_rooms():
 		var room = middle_rooms[randi() % middle_rooms.size()].instantiate()
 		rooms.add_child(room)
 		room.name = "Mid"
-		room.position.x = randf_range(-map_size, map_size) * tile_size
-		room.position.y = randf_range(-map_size, map_size) * tile_size
+		room.position.x = randi_range(-map_size, map_size) * tile_size
+		room.position.y = randi_range(-map_size, map_size) * tile_size
 		room.place(map_size, tile_size)
 
