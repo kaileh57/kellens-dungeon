@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be6v2owiy1dxs"]
 
 [ext_resource type="Texture2D" uid="uid://dab5dxbttk6j1" path="res://art/void.png" id="1_mbkhh"]
-[ext_resource type="Script" path="res://testing_and_debugging/mold_test.gd" id="2_xk2u5"]
+[ext_resource type="Script" path="res://!!ARCHIVE!!/mold_test.gd" id="2_xk2u5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_436cs"]
 texture = ExtResource("1_mbkhh")

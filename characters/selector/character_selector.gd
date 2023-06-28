@@ -25,18 +25,18 @@ func _ready():
 
 # Load which characters are unlocked from txt file
 func load_chars():
-	var unlocked = FileAccess.open(path,FileAccess.READ).get_as_text()
-	if unlocked.contains("default"):
-		default = true
-		$MenuBackground/Page1/HBoxContainer/VBoxContainer/Default.disabled = false
-	if unlocked.contains("teal"):
-		pass
-	if unlocked.contains("green"):
-		pass#enable_green()
-	if unlocked.contains("yellow"):
-		pass#enable_yellow()
-	if unlocked.contains("purple"):
-		pass#enable_purple()
+#	var unlocked = FileAccess.open(path,FileAccess.READ).get_as_text()
+#	if unlocked.contains("default"):
+	default = true
+	$MenuBackground/Page1/HBoxContainer/VBoxContainer/Default.disabled = false
+#	if unlocked.contains("teal"):
+#		pass
+#	if unlocked.contains("green"):
+#		pass#enable_green()
+#	if unlocked.contains("yellow"):
+#		pass#enable_yellow()
+#	if unlocked.contains("purple"):
+#		pass#enable_purple()
 
 
 

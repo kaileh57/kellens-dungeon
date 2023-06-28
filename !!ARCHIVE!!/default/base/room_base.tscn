@@ -1,7 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://c1thp60cypyyc"]
 
 [ext_resource type="Texture2D" uid="uid://cl3xwhbae3sk8" path="res://art/full tilemap original.png" id="1_my85l"]
-[ext_resource type="Script" path="res://rooms/default/base/room_base.gd" id="2_f26y4"]
+[ext_resource type="Script" path="res://!!ARCHIVE!!/default/base/room_base.gd" id="2_f26y4"]
+
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_t6o38"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

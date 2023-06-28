@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhfqcgbde5nmt"]
 
-[ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://rooms/default/base/room_base.tscn" id="1_ol2py"]
+[ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://!!ARCHIVE!!/default/base/room_base.tscn" id="1_ol2py"]
 [ext_resource type="PackedScene" uid="uid://dba1hxaxwybyo" path="res://rooms/objects/enemy/enemy_spawn.tscn" id="2_gjvvx"]
 [ext_resource type="PackedScene" uid="uid://b8tgi5ramiikj" path="res://rooms/objects/exit/exit.tscn" id="2_oxndq"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eay4d"]
 size = Vector2(96, 144)

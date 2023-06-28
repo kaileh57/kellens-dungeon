@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqkyyecgdtyx4"]
 
 [ext_resource type="TileSet" uid="uid://dv4xbivll00rk" path="res://level_generation/tileset.tres" id="1_paerx"]
-[ext_resource type="Script" path="res://level_generation/procedural_rooms/room_base.gd" id="2_10sc2"]
+[ext_resource type="Script" path="res://!!ARCHIVE!!/procedural_rooms/room_base.gd" id="2_10sc2"]
 
 [node name="ProceduralRoom" type="TileMap"]
 tile_set = ExtResource("1_paerx")

@@ -16,9 +16,9 @@ var tile_size := 16
 var placed_rooms := 0
 
 #room paths
-var starting_rooms := [preload("res://rooms/default/start/start_1.tscn")]
-var middle_rooms := [preload("res://rooms/default/mid/mid_1.tscn")]
-var end_rooms := [preload("res://rooms/default/end/end_1.tscn")]
+var starting_rooms := []#preload("res://rooms/default/start/start_1.tscn")]
+var middle_rooms := []#preload("res://rooms/default/mid/mid_1.tscn")]
+var end_rooms := []#preload("res://rooms/default/end/end_1.tscn")]
 
 #
 var rng = RandomNumberGenerator.new()
