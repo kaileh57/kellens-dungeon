@@ -22,6 +22,7 @@ Debug="*res://autoloads/debug_system/debug.gd"
 MusicBus="*res://autoloads/music_bus/music_bus.tscn"
 Flag="*res://autoloads/corner_flag/flag.tscn"
 Settings="*res://autoloads/settings/settings.tscn"
+ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 
 [display]
 
@@ -29,6 +30,10 @@ window/size/viewport_width=480
 window/size/viewport_height=270
 window/size/mode=2
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg")
 
 [input]
 
