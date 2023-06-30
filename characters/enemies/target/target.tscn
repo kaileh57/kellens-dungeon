@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://characters/base/character_base.gd" id="1_iuhfk"]
 [ext_resource type="Script" path="res://characters/fsm/fsm.gd" id="2_y40h4"]
-[ext_resource type="Texture2D" uid="uid://cxxeo3pa8brpg" path="res://icon.svg" id="3_lxgfn"]
+[ext_resource type="Texture2D" uid="uid://kbnymdn1kghu" path="res://asd.svg" id="3_lxgfn"]
 [ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hurtbox.gd" id="4_07w35"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fmajk"]
 animations = [{

@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4bf6ll277nkc"]
 
 [ext_resource type="PackedScene" uid="uid://dti31uol1nguc" path="res://items/item_base/item_base.tscn" id="1_qqono"]
-[ext_resource type="Texture2D" uid="uid://cxxeo3pa8brpg" path="res://icon.svg" id="2_7u4qf"]
+[ext_resource type="Texture2D" uid="uid://kbnymdn1kghu" path="res://asd.svg" id="2_7u4qf"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vuom5"]
 animations = [{
