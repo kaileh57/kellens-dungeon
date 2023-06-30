@@ -7,5 +7,5 @@ func _ready():#shows the button only in dev mode
 	$"/root/GlobalSettings".testing = self.button_pressed
 
 
-func _on_toggled(button_pressed):#go to the testing scene when enabled
-	$"/root/GlobalSettings".testing = button_pressed
+func _on_toggled(_button_pressed):#go to the testing scene when enabled
+	$"/root/GlobalSettings".testing = _button_pressed

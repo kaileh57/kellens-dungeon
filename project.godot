@@ -13,6 +13,7 @@ config_version=5
 config/name="2023 Roguelike Dev"
 run/main_scene="res://title_and_credits/title_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://asd.svg"
 
 [autoload]
@@ -23,6 +24,7 @@ MusicBus="*res://autoloads/music_bus/music_bus.tscn"
 Flag="*res://autoloads/corner_flag/flag.tscn"
 Settings="*res://autoloads/settings/settings.tscn"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [display]
 
@@ -33,7 +35,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg")
+enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg", "res://addons/debug_menu/plugin.cfg")
 
 [input]
 
