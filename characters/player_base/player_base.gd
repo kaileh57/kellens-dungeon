@@ -15,9 +15,9 @@ class_name PlayerBase
 
 ###################################### NOTE: ######################################
 # this is just the base class for a player, if you want custom code for your
-# weapon, detach the script, attach a new one, and have it extend MeleeWeapon
+# weapon, detach the script, attach a new one, and have it extend PlayerBase
 # DO NOT edit the code in the class unless you know what you are doing and have
-# consulted kellen as it could easily brick all of the melee weapons
+# consul kellen as it could easily brick all of the players
 
 
 

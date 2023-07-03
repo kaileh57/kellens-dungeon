@@ -17,7 +17,7 @@ class_name ItemBase
 # this is just the base class for a item, if you want custom code for your
 # item, detach the script, attach a new one, and have it extend ItemBase
 # DO NOT edit the code in the class unless you know what you are doing and have
-# consulted kellen as it could easily brick all of the items in the game
+# consult kellen as it could easily brick all of the items in the game
 
 
 

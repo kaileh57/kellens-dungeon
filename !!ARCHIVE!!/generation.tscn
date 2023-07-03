@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://by48l4lukiqbb"]
 
-[ext_resource type="Script" path="res://!!ARCHIVE!!/generation.gd" id="1_om6n1"]
+[ext_resource type="Script" path="res://level_generation/level_generator.gd" id="1_884pb"]
 
 [node name="Generation" type="Node2D"]
-script = ExtResource("1_om6n1")
+script = ExtResource("1_884pb")
 
 [node name="Rooms" type="Node2D" parent="."]
 
