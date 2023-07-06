@@ -7,5 +7,4 @@ Repo for work on kellen's game
 - Pull and push to dev branch at will, please make sure the game runs semi-stably before pushing
 - Notify other devs if you're using the dev branch, feel free to make your own branch and merge as necessary
 - Try not to erase anyone's work
-- Builds going out to testers should be in the nightly branch
-- If making weapons or characters and not directly coding, use the branch provided to you by the dev, and request they help merge if you don't know what you're doing
+- If making weapons or characters and not directly coding, use the branch provided to you by kellen, and request he help merge if you don't know what you're doing
