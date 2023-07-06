@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciyho66vnh4v2"]
+
+[ext_resource type="TileSet" uid="uid://okxf8kxixdfe" path="res://rooms/default/tileset.tres" id="1_21pop"]
+[ext_resource type="Script" path="res://rooms/default/enemies.gd" id="2_ycg2t"]
+
+[node name="Room" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Room" type="TileMap" parent="."]
+tile_set = ExtResource("1_21pop")
+format = 2
+metadata/_edit_lock_ = true
+
+[node name="Enemies" type="Node" parent="."]
+script = ExtResource("2_ycg2t")
+
+[node name="Connections" type="Node" parent="."]
+
+[node name="Up" type="Marker2D" parent="Connections"]
+position = Vector2(64, -8)
+
+[node name="Down" type="Marker2D" parent="Connections"]
+position = Vector2(272, 232)
+
+[node name="Right" type="Marker2D" parent="Connections"]
+position = Vector2(344, 16)
+
+[node name="Left" type="Marker2D" parent="Connections"]
+position = Vector2(-8, 208)
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="RoomShape" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomShape"]

@@ -1,0 +1,145 @@
+[gd_scene load_steps=22 format=3 uid="uid://kybobnn5fg8t"]
+
+[ext_resource type="PackedScene" uid="uid://bwcukgt47u58f" path="res://characters/player_base/player_base.tscn" id="1_kc13h"]
+[ext_resource type="Texture2D" uid="uid://drhapcfxnpeg" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="3_uyy04"]
+[ext_resource type="Texture2D" uid="uid://d0i0uah530fwf" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle.png" id="4_x6d3m"]
+[ext_resource type="Texture2D" uid="uid://c0e6qxhd2ajjh" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_move.png" id="5_wbkqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgmmw"]
+atlas = ExtResource("3_uyy04")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjvru"]
+atlas = ExtResource("3_uyy04")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucy5v"]
+atlas = ExtResource("3_uyy04")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx5an"]
+atlas = ExtResource("3_uyy04")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swo3f"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a73m1"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aic83"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf8ax"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qjjm"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbew5"]
+atlas = ExtResource("4_x6d3m")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4anq"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15jxo"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1xe8"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugt8o"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xril"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oad6x"]
+atlas = ExtResource("5_wbkqu")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8jm5"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgmmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjvru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucy5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx5an")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swo3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a73m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aic83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf8ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qjjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbew5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4anq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15jxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1xe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugt8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xril")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oad6x")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="PlayerBase" instance=ExtResource("1_kc13h")]
+health = 5.0
+max_health = 5.0
+accerelation = 20
+
+[node name="CharacterSprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_x8jm5")

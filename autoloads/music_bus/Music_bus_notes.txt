@@ -1,0 +1,5 @@
+to play sounds, use:
+	$"/root/MusicBus".play(preload("song/path"))
+
+list of sound paths:
+	preload("res://sounds/music/Test sound.mp3") test sound (cringe)

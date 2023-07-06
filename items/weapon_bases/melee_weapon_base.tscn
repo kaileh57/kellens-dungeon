@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://c5wxgmvf6vqfw"]
+
+[ext_resource type="PackedScene" uid="uid://dti31uol1nguc" path="res://items/item_base/item_base.tscn" id="1_n03r8"]
+[ext_resource type="Script" path="res://items/weapon_bases/melee_weapon_base.gd" id="2_nsat4"]
+[ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hitbox.gd" id="3_8n7qo"]
+[ext_resource type="Material" uid="uid://c3k5lgplmerjd" path="res://items/utils/Weapon.tres" id="4_36nim"]
+[ext_resource type="Texture2D" uid="uid://p5ck7nr4xly6" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="5_stkbe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvohv"]
+size = Vector2(86.1905, 19.1429)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aumc8"]
+atlas = ExtResource("5_stkbe")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyn22"]
+atlas = ExtResource("5_stkbe")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2bi5"]
+atlas = ExtResource("5_stkbe")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b7y8"]
+atlas = ExtResource("5_stkbe")
+region = Rect2(36, 0, 12, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwu1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aumc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyn22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2bi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b7y8")
+}],
+"loop": true,
+"name": &"slash",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_0xi8r"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_miyld"]
+resource_name = "charge"
+
+[sub_resource type="Animation" id="Animation_in1wn"]
+resource_name = "strong_attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1q6yt"]
+_data = {
+"attack": SubResource("Animation_0xi8r"),
+"charge": SubResource("Animation_miyld"),
+"strong_attack": SubResource("Animation_in1wn")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq8wv"]
+
+[node name="MeleeWeaponBase" instance=ExtResource("1_n03r8")]
+script = ExtResource("2_nsat4")
+rotation_offset = 0
+chargable = false
+
+[node name="HitBox" type="Area2D" parent="Node2D/ItemSprite" index="0"]
+script = ExtResource("3_8n7qo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/ItemSprite/HitBox" index="0"]
+shape = SubResource("RectangleShape2D_cvohv")
+
+[node name="ChargeParticles" type="GPUParticles2D" parent="Node2D/ItemSprite" index="1"]
+emitting = false
+amount = 15
+sub_emitter = NodePath(".")
+process_material = ExtResource("4_36nim")
+lifetime = 0.6
+
+[node name="SlashSprite" type="AnimatedSprite2D" parent="Node2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_cwu1n")
+animation = &"slash"
+
+[node name="SpriteAnimator" parent="Node2D" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_1q6yt")
+}
+
+[node name="CollisionShape2D" parent="Node2D/PlayerDetector" index="0"]
+shape = SubResource("CircleShape2D_oq8wv")

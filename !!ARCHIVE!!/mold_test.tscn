@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://be6v2owiy1dxs"]
+
+[ext_resource type="Texture2D" uid="uid://dab5dxbttk6j1" path="res://art/void.png" id="1_mbkhh"]
+[ext_resource type="Script" path="res://!!ARCHIVE!!/mold_test.gd" id="2_xk2u5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_436cs"]
+texture = ExtResource("1_mbkhh")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mvqwp"]
+sources/0 = SubResource("TileSetAtlasSource_436cs")
+
+[node name="MoldTest" type="TileMap"]
+tile_set = SubResource("TileSet_mvqwp")
+format = 2
+layer_0/tile_data = PackedInt32Array(196617, 0, 0)
+script = ExtResource("2_xk2u5")
+
+[node name="Spread" type="Timer" parent="."]
+wait_time = 0.012
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.01, 0.01)
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -1022.0
+offset_top = -842.0
+offset_right = -363.0
+offset_bottom = -571.0
+theme_override_font_sizes/font_size = 1000
+text = "60"
+
+[connection signal="timeout" from="Spread" to="." method="_on_spread_timeout"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1butrjk83nek"]
+
+[ext_resource type="PackedScene" uid="uid://dti31uol1nguc" path="res://items/item_base/item_base.tscn" id="1_5m4sb"]
+[ext_resource type="Script" path="res://items/weapon_bases/ranged_weapon_base.gd" id="2_gyw0j"]
+[ext_resource type="Material" uid="uid://c3k5lgplmerjd" path="res://items/utils/Weapon.tres" id="2_jfnvc"]
+[ext_resource type="PackedScene" uid="uid://d4kwio1mjqldr" path="res://items/weapon_bases/projectile_base.tscn" id="3_jksex"]
+
+[sub_resource type="Animation" id="Animation_d5ylr"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_2p4hn"]
+resource_name = "charge"
+
+[sub_resource type="Animation" id="Animation_tb0oj"]
+resource_name = "strong_attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrvfd"]
+_data = {
+"attack": SubResource("Animation_d5ylr"),
+"charge": SubResource("Animation_2p4hn"),
+"strong_attack": SubResource("Animation_tb0oj")
+}
+
+[node name="RangedWeaponBase" instance=ExtResource("1_5m4sb")]
+script = ExtResource("2_gyw0j")
+rotation_offset = 0
+chargable = false
+arrow_scene = ExtResource("3_jksex")
+shoot_type = null
+random_spread_if_random = 0
+
+[node name="ChargeParticles" type="GPUParticles2D" parent="Node2D/ItemSprite" index="0"]
+emitting = false
+amount = 15
+sub_emitter = NodePath(".")
+process_material = ExtResource("2_jfnvc")
+lifetime = 0.6
+
+[node name="ProjectileSpawn" type="Node2D" parent="Node2D/ItemSprite" index="1"]
+
+[node name="SpriteAnimator" parent="Node2D" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_yrvfd")
+}

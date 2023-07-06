@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhfqcgbde5nmt"]
+
+[ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://!!ARCHIVE!!/default/base/room_base.tscn" id="1_ol2py"]
+[ext_resource type="PackedScene" uid="uid://dba1hxaxwybyo" path="res://rooms/objects/enemy/enemy_spawn.tscn" id="2_gjvvx"]
+[ext_resource type="PackedScene" uid="uid://b8tgi5ramiikj" path="res://rooms/objects/exit/exit.tscn" id="2_oxndq"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eay4d"]
+size = Vector2(96, 144)
+
+[node name="TileMap" instance=ExtResource("1_ol2py")]
+layer_0/tile_data = PackedInt32Array(327686, 196608, 1, 327687, 196608, 1, 262151, 196608, 1, 262150, 196608, 1, 196614, 196608, 1, 196615, 196608, 1, 131079, 131072, 1, 131078, 131072, 1, 65542, 131072, 1, 6, 131072, 1, 7, 131072, 1, 65543, 131072, 1, -65531, 393216, 1, -65530, 458752, 1, -65528, 524288, 1, -65529, 458752, 1, 8, 524288, 2, 65544, 524288, 3, 5, 393216, 2, 65541, 393216, 3, -131067, 458752, 3, -131066, 458752, 5, -131065, 131072, 0, -131064, 458752, 3, 327685, 262144, 6, 131080, 131072, 3, 131077, 131072, 1, 196616, 65536, 6, 196613, 327680, 6, 262152, 196608, 5, 131081, 196608, 5, 65545, 196608, 5, 9, 196608, 5, -65527, 196608, 5, -131063, 196608, 5, -131068, 262144, 5, -65532, 262144, 5, 4, 262144, 5, 65540, 262144, 5, 131076, 262144, 5, 262149, 262144, 5, 327688, 196608, 6, 196617, 196608, 6, 196612, 262144, 6, -196599, 196608, 7, -196604, 262144, 7, -196603, 131072, 7, -196602, 131072, 7, -196601, 131072, 7, -196600, 131072, 7)
+
+[node name="Down" type="Marker2D" parent="Connectors" index="0"]
+position = Vector2(112, 104)
+
+[node name="EnemySpawn" parent="EnemySpawns" index="0" instance=ExtResource("2_gjvvx")]
+position = Vector2(112, 48)
+
+[node name="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(112, 24)
+shape = SubResource("RectangleShape2D_eay4d")
+
+[node name="Exit" parent="." index="3" instance=ExtResource("2_oxndq")]
+position = Vector2(112, 8)

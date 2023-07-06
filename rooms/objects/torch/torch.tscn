@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf106holjffsn"]
+
+[ext_resource type="Texture2D" uid="uid://ciiaqkjh7dcjj" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/props_itens/torch_spritesheet.png" id="1_vupf4"]
+[ext_resource type="Texture2D" uid="uid://c1oplddnf5gv3" path="res://art/mystuff/TorchLight.png" id="2_ar8k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aktft"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7raba"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp6wu"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwtyj"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dib4"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05iq6"]
+atlas = ExtResource("1_vupf4")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hogg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aktft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7raba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp6wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwtyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dib4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05iq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hogg3")
+autoplay = "default"
+frame_progress = 0.528107
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0, 1)
+texture = ExtResource("2_ar8k2")

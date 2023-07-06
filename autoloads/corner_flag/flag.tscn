@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://vlq7yiqjdo5f"]
+
+[ext_resource type="Script" path="res://autoloads/corner_flag/flag.gd" id="1_0pbmu"]
+
+[node name="Flag" type="CanvasLayer"]
+script = ExtResource("1_0pbmu")
+
+[node name="Dev" type="ColorRect" parent="."]
+visible = false
+offset_left = -25.0
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 88.0
+rotation = -0.785398
+color = Color(1, 0.913725, 0, 1)
+
+[node name="Label" type="Label" parent="Dev"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -8.0
+offset_right = 23.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "DEV BUILD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Experimental" type="ColorRect" parent="."]
+visible = false
+offset_left = -25.0
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 88.0
+rotation = -0.785398
+color = Color(1, 0.913725, 0, 1)
+
+[node name="Label" type="Label" parent="Experimental"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -8.0
+offset_right = 23.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Experimental"
+horizontal_alignment = 1
+vertical_alignment = 1

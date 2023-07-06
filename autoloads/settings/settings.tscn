@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://2e2bhrkfpmpp"]
+
+[ext_resource type="Script" path="res://autoloads/settings/settings.gd" id="1_dmxci"]
+[ext_resource type="Texture2D" uid="uid://cnhb8d32i57sa" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu background.png" id="1_kb7b2"]
+
+[node name="Settings" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_dmxci")
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+texture = ExtResource("1_kb7b2")
+
+[node name="Borderless" type="CheckButton" parent="."]
+offset_left = 23.0
+offset_top = 35.0
+offset_right = 67.0
+offset_bottom = 59.0
+
+[node name="Fullscreen" type="CheckButton" parent="."]
+offset_left = 22.0
+offset_top = 60.0
+offset_right = 66.0
+offset_bottom = 84.0
+
+[node name="Vsync" type="CheckButton" parent="."]
+offset_left = 22.0
+offset_top = 85.0
+offset_right = 66.0
+offset_bottom = 109.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 63.0
+offset_top = 36.0
+offset_right = 103.0
+offset_bottom = 59.0
+text = "Borderless"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 63.0
+offset_top = 60.0
+offset_right = 146.0
+offset_bottom = 86.0
+text = "Fullscreen"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 85.0
+offset_right = 147.0
+offset_bottom = 111.0
+text = "Vsync"
+
+[connection signal="toggled" from="Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Vsync" to="." method="_on_vsync_toggled"]

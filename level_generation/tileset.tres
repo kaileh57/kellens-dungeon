@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dv4xbivll00rk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s0tae"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekoxt"]
+texture = SubResource("CompressedTexture2D_s0tae")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Hallway"
+terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 1, 1)
+sources/1 = SubResource("TileSetAtlasSource_ekoxt")

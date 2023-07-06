@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8tgi5ramiikj"]
+
+[ext_resource type="Texture2D" uid="uid://b0g2d7vvaxcgs" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/tiles/floor/floor_stair.png" id="1_4bhis"]
+
+[node name="Exit" type="Node2D"]
+
+[node name="FloorStair" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_4bhis")
+
+[node name="FloorStair2" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+texture = ExtResource("1_4bhis")
+
+[node name="FloorStair3" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("1_4bhis")
+
+[node name="FloorStair4" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+texture = ExtResource("1_4bhis")

@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw4fn4amfei7"]
+
+[ext_resource type="Texture2D" uid="uid://cnhb8d32i57sa" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu background.png" id="1_6fl5s"]
+[ext_resource type="Script" path="res://characters/selector/character_selector.gd" id="1_cpph7"]
+[ext_resource type="Texture2D" uid="uid://b1fhhic6aca0w" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_under.png" id="3_e502q"]
+[ext_resource type="Texture2D" uid="uid://h6kry0u473gd" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon.png" id="3_gbbpt"]
+[ext_resource type="Texture2D" uid="uid://dmh3fqxydxvod" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon_pressed.png" id="4_2essb"]
+[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/pixel.ttf" id="4_p4nqq"]
+[ext_resource type="Texture2D" uid="uid://c7hv0lr8ghj7n" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/red/red_idle_icon_hover.png" id="5_5y7uc"]
+[ext_resource type="Texture2D" uid="uid://dcspugeio4frl" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/heroes/idle_icon_blacked.png" id="6_8kp0y"]
+
+[sub_resource type="Animation" id="Animation_sb26c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_88l1b"]
+resource_name = "fade"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7ert"]
+_data = {
+"RESET": SubResource("Animation_sb26c"),
+"fade": SubResource("Animation_88l1b")
+}
+
+[sub_resource type="Theme" id="Theme_v8c76"]
+default_font = ExtResource("4_p4nqq")
+Label/font_sizes/font_size = 7
+
+[node name="CharacterSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpph7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_k7ert")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(241, 105)
+texture = ExtResource("1_6fl5s")
+
+[node name="BottomText" type="Sprite2D" parent="MenuBackground"]
+visible = false
+position = Vector2(0, 129)
+texture = ExtResource("3_e502q")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuBackground/BottomText"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -22.0
+offset_right = -97.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/BottomText/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MenuBackground/BottomText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_p4nqq")
+theme_override_font_sizes/font_size = 8
+text = "Default"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Flavor" type="Label" parent="MenuBackground/BottomText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_p4nqq")
+theme_override_font_sizes/font_size = 3
+text = "Flavor
+Flavor
+Flavor
+Flavor"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Page1" type="MarginContainer" parent="MenuBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -103.0
+offset_right = -220.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuBackground/Page1"]
+layout_mode = 2
+theme = SubResource("Theme_v8c76")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBackground/Page1/HBoxContainer"]
+layout_mode = 2
+
+[node name="Default" type="TextureButton" parent="MenuBackground/Page1/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_gbbpt")
+texture_pressed = ExtResource("4_2essb")
+texture_hover = ExtResource("5_5y7uc")
+texture_disabled = ExtResource("6_8kp0y")
+
+[node name="Title" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 7.0
+offset_right = 479.0
+offset_bottom = 33.0
+text = "Choose Your Character:"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="_on_default_mouse_entered"]
+[connection signal="mouse_exited" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="hide_bottom"]
+[connection signal="pressed" from="MenuBackground/Page1/HBoxContainer/VBoxContainer/Default" to="." method="_on_default_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2lb0pakxbx2j"]
+
+[ext_resource type="PackedScene" uid="uid://c1thp60cypyyc" path="res://!!ARCHIVE!!/default/base/room_base.tscn" id="1_1vg72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vt2i"]
+size = Vector2(64, 128)
+
+[node name="TileMap" instance=ExtResource("1_1vg72")]
+layer_0/tile_data = PackedInt32Array(1, 196608, 1, 65537, 196608, 1, 131073, 196608, 1, 196609, 196608, 1, 262145, 196608, 1, 327681, 196608, 1, 393217, 196608, 1, 458753, 196608, 1, 2, 196608, 1, 65538, 196608, 1, 131074, 196608, 1, 196610, 196608, 1, 262146, 196608, 1, 327682, 196608, 1, 393218, 196608, 1, 458754, 196608, 1, 0, 262144, 5, 65536, 262144, 5, 131072, 262144, 5, 196608, 262144, 5, 262144, 262144, 5, 327680, 262144, 5, 393216, 262144, 5, 458752, 262144, 5, 3, 196608, 5, 65539, 196608, 5, 131075, 196608, 5, 196611, 196608, 5, 262147, 196608, 5, 327683, 196608, 5, 393219, 196608, 5, 458755, 196608, 5)
+
+[node name="Up" type="Marker2D" parent="Connectors" index="0"]
+position = Vector2(32, 8)
+
+[node name="Down" type="Marker2D" parent="Connectors" index="1"]
+position = Vector2(32, 120)
+
+[node name="CollisionShape2D" parent="Collider" index="0"]
+position = Vector2(32, 64)
+shape = SubResource("RectangleShape2D_4vt2i")

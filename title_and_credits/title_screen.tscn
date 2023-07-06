@@ -1,0 +1,259 @@
+[gd_scene load_steps=14 format=3 uid="uid://c3votahmbu2nd"]
+
+[ext_resource type="Script" path="res://title_and_credits/title_screen.gd" id="1_c25g7"]
+[ext_resource type="Texture2D" uid="uid://c224h7yob0kvg" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button.png" id="2_0qnj5"]
+[ext_resource type="FontFile" uid="uid://2ylwwutv16mk" path="res://fonts_and_extras/pixel.ttf" id="2_8sviu"]
+[ext_resource type="Script" path="res://title_and_credits/button_manager.gd" id="2_esq3n"]
+[ext_resource type="Texture2D" uid="uid://dxmg53td2sroq" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button_press.png" id="3_xjj7o"]
+[ext_resource type="Texture2D" uid="uid://dq1puefvlqdai" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button-hover.png" id="4_dhmu3"]
+[ext_resource type="Texture2D" uid="uid://cxduiol4bxy40" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button-disabled-export.png" id="5_65ogw"]
+[ext_resource type="Script" path="res://title_and_credits/testing_button.gd" id="8_oav5x"]
+[ext_resource type="Script" path="res://title_and_credits/fade.gd" id="9_ti3sc"]
+
+[sub_resource type="Theme" id="Theme_aj1l3"]
+default_font = ExtResource("2_8sviu")
+Fonts/fonts/normal = ExtResource("2_8sviu")
+
+[sub_resource type="Animation" id="Animation_5rni4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_loiaq"]
+resource_name = "fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fade"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3me4u"]
+_data = {
+"RESET": SubResource("Animation_5rni4"),
+"fade": SubResource("Animation_loiaq")
+}
+
+[node name="Titlescreen" type="Node"]
+script = ExtResource("1_c25g7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_aj1l3")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Vbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="CanvasLayer/MarginContainer/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Dungeon game"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Subtitle" type="Label" parent="CanvasLayer/MarginContainer/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "By: kellen.H"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Buttons" type="MarginContainer" parent="CanvasLayer/MarginContainer/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/Vbox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_esq3n")
+metadata/_edit_lock_ = true
+
+[node name="Start" type="TextureButton" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("2_0qnj5")
+texture_pressed = ExtResource("3_xjj7o")
+texture_hover = ExtResource("4_dhmu3")
+texture_disabled = ExtResource("5_65ogw")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Start"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Multiplayer" type="TextureButton" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Coming soon!"
+focus_mode = 0
+disabled = true
+keep_pressed_outside = true
+texture_normal = ExtResource("2_0qnj5")
+texture_pressed = ExtResource("3_xjj7o")
+texture_hover = ExtResource("4_dhmu3")
+texture_disabled = ExtResource("5_65ogw")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Multiplayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.32549)
+theme_override_font_sizes/font_size = 6
+text = "Multiplayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("2_0qnj5")
+texture_pressed = ExtResource("3_xjj7o")
+texture_hover = ExtResource("4_dhmu3")
+texture_disabled = ExtResource("5_65ogw")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Testing" type="CheckButton" parent="CanvasLayer"]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 73.0
+offset_bottom = 15.5
+grow_vertical = 2
+button_pressed = true
+text = "TESTING"
+script = ExtResource("8_oav5x")
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_ti3sc")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Fade"]
+libraries = {
+"": SubResource("AnimationLibrary_3me4u")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 246.0
+offset_right = 288.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Background is a work in progress"
+
+[connection signal="button_down" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Start" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_start_button_down"]
+[connection signal="button_up" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Start" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_start_button_up"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Multiplayer" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_multiplayer_button_down"]
+[connection signal="button_up" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Multiplayer" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_multiplayer_button_up"]
+[connection signal="button_down" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_quit_button_down"]
+[connection signal="button_up" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit" to="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer" method="_on_quit_button_up"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Vbox/Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="CanvasLayer/Testing" to="CanvasLayer/Testing" method="_on_toggled"]

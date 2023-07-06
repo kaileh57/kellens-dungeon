@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhx3bfk7m0x6l"]
+
+[ext_resource type="Script" path="res://characters/base/character_base.gd" id="1_iuhfk"]
+[ext_resource type="Script" path="res://characters/fsm/fsm.gd" id="2_y40h4"]
+[ext_resource type="Texture2D" uid="uid://kbnymdn1kghu" path="res://asd.svg" id="3_lxgfn"]
+[ext_resource type="Script" path="res://characters/hit_and_hurt_boxes/hurtbox.gd" id="4_07w35"]
+
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmajk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lxgfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbewb"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iqih"]
+size = Vector2(128, 128)
+
+[node name="Target" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_iuhfk")
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("2_y40h4")
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fmajk")
+metadata/_edit_lock_ = true
+
+[node name="SpriteAnimator" type="AnimationPlayer" parent="."]
+
+[node name="PhysicsShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lbewb")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("4_07w35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_4iqih")
