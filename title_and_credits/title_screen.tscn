@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3votahmbu2nd"]
+[gd_scene load_steps=15 format=3 uid="uid://c3votahmbu2nd"]
 
 [ext_resource type="Script" path="res://title_and_credits/title_screen.gd" id="1_c25g7"]
 [ext_resource type="Texture2D" uid="uid://c224h7yob0kvg" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button.png" id="2_0qnj5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxduiol4bxy40" path="res://art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/menu_button-disabled-export.png" id="5_65ogw"]
 [ext_resource type="Script" path="res://title_and_credits/testing_button.gd" id="8_oav5x"]
 [ext_resource type="Script" path="res://title_and_credits/fade.gd" id="9_ti3sc"]
+[ext_resource type="PackedScene" uid="uid://hy6sdhhe0xsy" path="res://title_and_credits/updater.tscn" id="10_esgx2"]
 
 [sub_resource type="Theme" id="Theme_aj1l3"]
 default_font = ExtResource("2_8sviu")
@@ -232,7 +233,11 @@ libraries = {
 "": SubResource("AnimationLibrary_3me4u")
 }
 
+[node name="Updater" parent="CanvasLayer" instance=ExtResource("10_esgx2")]
+position = Vector2(35, 65)
+
 [node name="Node2D" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Node2D"]
 anchors_preset = 7
