@@ -117,7 +117,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Updater" type="Node2D"]
+[node name="Updater" type="Label"]
 script = ExtResource("1_fcmq8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
